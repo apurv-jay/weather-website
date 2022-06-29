@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     messageOne.textContent = ''
     messageTwo.textContent = ''
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) { //since we are using data.error thats means we are taking error from a object so we need to pass a object
                 messageOne.textContent=data.error
